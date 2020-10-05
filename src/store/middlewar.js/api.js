@@ -13,7 +13,9 @@ const api = ({dispatch}) => next => async action => {
     try {
         const response = await axios.request({
             baseURL: "http://dummy.restapiexample.com/api/v1",
-            url
+            url,
+            method,
+            data
         });
         // General
         dispatch(actions.apiCallSuccess(response.data));
